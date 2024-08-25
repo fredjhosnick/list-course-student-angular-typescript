@@ -1,13 +1,20 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CoursesTableComponent } from './components/courses-table/courses-table.component';
+import { StudentsTableComponent } from './components/students-table/students-table.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [CoursesTableComponent,StudentsTableComponent,CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'courses-list';
+ 
+   courses:boolean = true
+  handleChange(){
+    this.courses = !this.courses
+  }
+
 }
